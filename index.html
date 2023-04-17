@@ -6,11 +6,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Customized Umbrella</title>
     <link rel="stylesheet" href="./index.css">
+    <script src="https://kit.fontawesome.com/d6f74ce538.js" crossorigin="anonymous"></script>
 </head>
 <body>
     <div id="parent_box">
         <div id="preview_box">
-            <img src="https://drive.google.com/uc?export=view&id=1VsHEklDiL5VbAlW3wJDG1iovKMJOBOrc" alt="">
+            <div id="child_box">
+                <img id="main_img" src="https://drive.google.com/uc?export=view&id=1VsHEklDiL5VbAlW3wJDG1iovKMJOBOrc" alt="">
+            </div>
+            <div id="logo_box">
+                
+            </div>   
         </div>
         <div id="handler_box">
             <h1>Custom Umbrella</h1>
@@ -19,14 +25,19 @@
                 <button id="yellow"></button>
                 <button id="pink"></button>
             </div>
-            <h2>Customize your umbrella</h2>
-            <p>Upload a logo for instant preview.</p>
-            <p>.png and .jpg  files only. Max file size is 5MB</p>
+            <h4>Customize your umbrella</h4>
+            <p id="guideline">Upload a logo for an instant preview.</p>
+            <p id="note">.png and .jpg  files only. Max file size is 5MB</p>
             <button id="upload_button">
-                <img src="https://drive.google.com/uc?export=view&id=1-iV7uV2c8fEez4zRSIgusopCVZydoYif" alt="">
-                <span>UPLOAD LOGO</span> 
+                <input  type="file" id="upload" accept="image/png" hidden>
+                <label for="upload">
+                    <img id="upload_logo" src="https://drive.google.com/uc?export=view&id=1-iV7uV2c8fEez4zRSIgusopCVZydoYif" alt="">
+                    <span id="file_name">UPLOAD LOGO</span> 
+                    <!-- <i id="icon" style="color: black" class="fa-solid fa-xmark"></i> -->
+                </label>
+                <i id="icon" style="color: black" class="fa-solid fa-xmark"></i>
             </button>
-        </div>
+        </div> 
     </div>
 </body>
 </html>
