@@ -8,13 +8,51 @@
     margin-top: 100px;
     display: flex;
     justify-content: space-between;
-    height: 200px;
+    /* height: 200px; */
 }
 #preview_box{
     border: 1px solid red;
     width: 45%;
 }
+#preview_box>img{
+    width: 105%;
+    height: 400px;
+}
 #handler_box{
     border: 1px solid blue;
     width: 45%;
+    margin-top: 45px;
+}
+#color_buttons{
+    border: 1px solid blueviolet;
+    display: flex;
+    gap: 10px;
+}
+#color_buttons>button{
+    height: 20px;
+    width: 20px;
+    border-radius: 50%;
+    border: none;
+}
+#blue{
+    background-color: blue;
+}
+#yellow{
+    background-color: yellow;
+}
+#pink{
+    background-color: pink;
+}
+#upload_button{
+    background-color: rgb(43, 176, 202);
+    color: white;
+    border: none;
+    width: 100%;
+    padding: 8px;
+    display: flex;
+    align-items: center;
+}
+#upload_button>span{
+    font-size: 15px;
+    margin: auto;
 }
