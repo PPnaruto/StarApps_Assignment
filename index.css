@@ -13,6 +13,9 @@
 #preview_box{
     border: 1px solid red;
     width: 45%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 #preview_box>img{
     width: 105%;
@@ -56,3 +59,14 @@
     font-size: 15px;
     margin: auto;
 }
+#rotate {
+     animation: rotation 2s infinite linear;
+}
+@keyframes rotation {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(359deg);
+    }
+  }
