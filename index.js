@@ -1,13 +1,17 @@
 let changePreview = (e)=>{
+
     const box = document.querySelector("#child_box");
     box.innerHTML = null;
+
     const image = document.createElement("img");
     image.setAttribute("id","main_img");   
+
     const logo = document.getElementById("upload_logo");
     logo.src = "https://drive.google.com/uc?export=view&id=1-iV7uV2c8fEez4zRSIgusopCVZydoYif";
     logo.removeAttribute("class");
-    if(document.getElementById("image")){
-        document.getElementById("image").style.visibility = "visible";
+
+    if(document.getElementById("loading")){
+        document.getElementById("loading").style.visibility = "visible";
     }
     
     switch(e.target.id){
@@ -41,13 +45,7 @@ const backgroundColorChange = (value)=>{
     }
 }
 
-const action = document.getElementById("color_buttons");
-action.addEventListener("click",(e)=>{
-    console.log(e.target.id);
-    setTimeout(()=>{
-        changePreview(e)
-    },2000);
-    backgroundColorChange(e.target.id);
+const addLoader = () =>{
     const image = document.querySelector("#child_box"); 
     image.innerHTML = null;
     const loader = document.createElement("img");
@@ -56,29 +54,48 @@ action.addEventListener("click",(e)=>{
     loader.style.width="50px";
     loader.style.height="50px";
     image.append(loader);
+}
+
+const addLogo = () =>{
     const logo = document.getElementById("upload_logo");
     logo.src = "https://drive.google.com/uc?export=view&id=1VX4q4rdO8ta5nVYcXlrv-YXXC8EEyRNS";
     logo.setAttribute("class","rotate");
-    if(document.getElementById("image")){
-        document.getElementById("image").style.visibility = "hidden";
+    if(document.getElementById("loading")){
+        document.getElementById("loading").style.visibility = "hidden";
     }
+}
+
+const action = document.getElementById("color_buttons");
+action.addEventListener("click",(e)=>{
+    // console.log(e.target.id);
+    setTimeout(()=>{
+        changePreview(e)
+    },2000);
+
+    backgroundColorChange(e.target.id);
+
+    addLoader();
+
+    addLogo(); 
 });
 
 const res = document.getElementById("upload");
 res.addEventListener('change', (event) => {
+
     const addLogo = document.getElementById("logo_box");
     const getLogo = document.createElement("img");
-    getLogo.setAttribute("id","image");
+    getLogo.setAttribute("id","loading");
     getLogo.setAttribute("src","");
     addLogo.append(getLogo);
+
   const file = event.target.files[0];
   const reader = new FileReader();
   reader.readAsDataURL(file);
-  console.log(file.name);
   reader.onload = (readerEvent) => {
-    const imageElement = document.getElementById('image');
-    imageElement.src = readerEvent.target.result;
+        const imageElement = document.getElementById('loading');
+        imageElement.src = readerEvent.target.result;
   };
+
   const file_name = document.querySelector("#file_name");
   file_name.innerHTML = file.name;
   const remove_icon = document.getElementById("icon");
