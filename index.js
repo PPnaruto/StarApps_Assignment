@@ -9,17 +9,36 @@ let changePreview = (e)=>{
     if(document.getElementById("image")){
         document.getElementById("image").style.visibility = "visible";
     }
+    
     switch(e.target.id){
         case "yellow":
-            image.setAttribute("src","https://drive.google.com/uc?export=view&id=1MUsJ7TOc2dLnrvJ_VFWVApTh1OVfkK3S");
+            image.setAttribute("src","https://drive.google.com/uc?export=view&id=1MUsJ7TOc2dLnrvJ_VFWVApTh1OVfkK3S");     
         break;
         case "pink":
-            image.setAttribute("src","https://drive.google.com/uc?export=view&id=1EGZdRH9RffKCorSJjgKEGCHy4YFro2EX");
+            image.setAttribute("src","https://drive.google.com/uc?export=view&id=1EGZdRH9RffKCorSJjgKEGCHy4YFro2EX");     
         break;
         default:
-            image.setAttribute("src","https://drive.google.com/uc?export=view&id=1VsHEklDiL5VbAlW3wJDG1iovKMJOBOrc");
+            image.setAttribute("src","https://drive.google.com/uc?export=view&id=1VsHEklDiL5VbAlW3wJDG1iovKMJOBOrc");      
     }
     box.append(image);
+}
+
+const backgroundColorChange = (value)=>{
+    let body = document.body;
+    const button = document.getElementById("upload_button");
+    switch (value){
+        case "yellow":
+            body.style.backgroundColor="rgba(227, 227, 113, 0.203)";
+            button.style.backgroundColor = "rgba(239, 217, 22, 0.937)";
+        break;
+        case "pink":
+            body.style.backgroundColor="rgba(220, 156, 167, 0.24)";
+            button.style.backgroundColor = "pink";
+        break;
+        default:
+            body.style.backgroundColor="rgba(108, 213, 232, 0.211)";
+            button.style.backgroundColor = "rgb(10, 181, 215)";
+    }
 }
 
 const action = document.getElementById("color_buttons");
@@ -28,7 +47,7 @@ action.addEventListener("click",(e)=>{
     setTimeout(()=>{
         changePreview(e)
     },2000);
-   
+    backgroundColorChange(e.target.id);
     const image = document.querySelector("#child_box"); 
     image.innerHTML = null;
     const loader = document.createElement("img");

@@ -1,6 +1,9 @@
 *{
     font-family: sans-serif;
 }
+body{
+    background-color: rgba(108, 213, 232, 0.211);
+}
 #parent_box{
     /* border: 1px solid black; */
     width: 60%;
@@ -70,14 +73,14 @@
     margin-top: -8px;
 }
 #upload_button{
-    background-color: rgb(43, 176, 202);
+    background-color:rgb(10, 181, 215) ;
     color: white;
     border: none;
     width: 100%;
     padding: 8px;
     display: flex;
     align-items: center;
-    
+    font-weight: bold;
 }
 #upload_button>label{
     /* border: 1px solid black; */
