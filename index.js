@@ -6,7 +6,9 @@ let changePreview = (e)=>{
     const logo = document.getElementById("upload_logo");
     logo.src = "https://drive.google.com/uc?export=view&id=1-iV7uV2c8fEez4zRSIgusopCVZydoYif";
     logo.removeAttribute("class");
-    document.getElementById("image").style.visibility = "visible";
+    if(document.getElementById("image")){
+        document.getElementById("image").style.visibility = "visible";
+    }
     switch(e.target.id){
         case "yellow":
             image.setAttribute("src","https://drive.google.com/uc?export=view&id=1MUsJ7TOc2dLnrvJ_VFWVApTh1OVfkK3S");
@@ -38,7 +40,9 @@ action.addEventListener("click",(e)=>{
     const logo = document.getElementById("upload_logo");
     logo.src = "https://drive.google.com/uc?export=view&id=1VX4q4rdO8ta5nVYcXlrv-YXXC8EEyRNS";
     logo.setAttribute("class","rotate");
-    document.getElementById("image").style.visibility = "hidden";
+    if(document.getElementById("image")){
+        document.getElementById("image").style.visibility = "hidden";
+    }
 });
 
 const res = document.getElementById("upload");

@@ -2,14 +2,12 @@
     font-family: sans-serif;
 }
 #parent_box{
-    border: 1px solid black;
+    /* border: 1px solid black; */
     width: 60%;
     margin: auto;
     margin-top: 100px;
     display: flex;
     justify-content: space-evenly;
-    /* height: 200px; */
-    /* align-items: center; */
 }
 #preview_box{
     /* border: 1px solid red; */
